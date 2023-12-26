@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.domain.Account;
 import com.example.demo.domain.User;
 import com.example.demo.repository.UserRepository;
 
@@ -18,6 +19,10 @@ public class UserService {
 	
 	public void insertUser(User user) {
 		userRepository.insertUser(user);
+	}
+	
+	public void insertAccount(Account account) {
+		userRepository.insertAccount(account);
 	}
 
 }

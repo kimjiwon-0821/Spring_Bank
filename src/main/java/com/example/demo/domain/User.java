@@ -1,6 +1,5 @@
 package com.example.demo.domain;
 
-import java.sql.Date;
 
 import lombok.Data;
 

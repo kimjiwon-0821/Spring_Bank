@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.domain.Account;
 import com.example.demo.domain.User;
 import com.example.demo.service.UserService;
 
@@ -52,5 +55,16 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
+	
+	@GetMapping("account")
+	public String account() {
+		return "account";
+	}
+	@PostMapping("account")
+	public String account(Account account,Principal principal) {
+		account.setId(principal.getName());
+		userService.insertAccount(account);
+		return "redirect:/index";
+	}
 
 }

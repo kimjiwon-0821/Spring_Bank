@@ -9,5 +9,6 @@
 <body>
 <h1>index page zzzzzzz</h1>
 <h4>main page - login success</h4>
+<a href="../account"></a>
 </body>
 </html>

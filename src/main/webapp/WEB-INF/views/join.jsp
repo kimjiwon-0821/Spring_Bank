@@ -63,6 +63,12 @@
 					</div>
 				</th>    
 			</tr>
+			<tr>
+				<th>계좌 생성을 위한 비밀번호</th>
+		        <th>
+					<input type="accPassword" name="text" value="" placeholder="계좌 비밀번호를 입력 하세요"/>
+				</th>                
+			</tr>
 		</table>
 	</form>					
 </body>

@@ -3,6 +3,7 @@ package com.example.demo.repository;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.domain.Account;
 import com.example.demo.domain.User;
 
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,10 @@ public class UserRepository {
 	}
 	public void insertUser(User user) {
 		mybatis.insert("insertUser", user);
+	}
+	
+	public void insertAccount(Account account) {
+		mybatis.insert("insertAccount",account);
 	}
 
 }
