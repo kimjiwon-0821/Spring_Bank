@@ -39,7 +39,7 @@
 			<tr>
 				<th>ID</th>
 				<th>
-					<input type="text" name="accPassword" value="" placeholder="계좌 비밀번호를 입력하세요."/>
+					<input type="password" name="accPassword" value="" placeholder="계좌 비밀번호를 입력하세요."/>
 				</th>
 				<th>
 					<input type="submit" value="계좌 생성"/>

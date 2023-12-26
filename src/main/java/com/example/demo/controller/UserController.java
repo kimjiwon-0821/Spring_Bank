@@ -47,11 +47,15 @@ public class UserController {
 		return "join";
 	}
 	@PostMapping("join")
-	public String join(User user) {
+	public String join(User user,Account account) {
 		String rawPassword = user.getPassword();
 		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
 		user.setPassword(encPassword);
 		userService.insertUser(user);
+		
+		account.setId(user.getId());
+		account.setAccount(user.getAccPassword());
+		userService.insertAccount(account);
 		return "redirect:/login";
 	}
 	

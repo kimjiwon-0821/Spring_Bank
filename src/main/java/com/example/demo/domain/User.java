@@ -13,6 +13,6 @@ public class User {
 //	private Date joinDate;
 //	private Integer notifyEnable;
 	private String role;
-	
+	private Integer accPassword;
 	
 }
