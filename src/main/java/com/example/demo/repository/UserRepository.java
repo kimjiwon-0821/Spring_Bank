@@ -15,5 +15,8 @@ public class UserRepository {
 	public User getUser(String id) {
 		return mybatis.selectOne("getUser", id);
 	}
+	public void insertUser(User user) {
+		mybatis.insert("insertUser", user);
+	}
 
 }

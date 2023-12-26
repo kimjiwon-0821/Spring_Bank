@@ -22,12 +22,17 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http.csrf().disable();
 		http.authorizeRequests()
-			.requestMatchers(new AntPathRequestMatcher("/user/**")).authenticated()
-			.requestMatchers(new AntPathRequestMatcher("/manager/**")).access("hasRole('ROLE_ADMIN')OR hasRole('ROLE_MANAGER')")
-			.requestMatchers(new AntPathRequestMatcher("/admin/**")).access("hasRole('ROLE_ADMIN')")
+//			.requestMatchers(new AntPathRequestMatcher("/user/**")).authenticated()
+//			.requestMatchers(new AntPathRequestMatcher("/manager/**")).access("hasRole('ROLE_ADMIN')OR hasRole('ROLE_MANAGER')")
+//			.requestMatchers(new AntPathRequestMatcher("/admin/**")).access("hasRole('ROLE_ADMIN')")
+			.requestMatchers(new AntPathRequestMatcher("/index/**")).authenticated()
 			.anyRequest().permitAll()
 			.and()
-			.formLogin();
+			.formLogin()
+			.loginPage("/login")
+			.usernameParameter("id") // principleDetailsService의 매개변수가 username으로 하기 싫으면 여기서 변경
+			.loginProcessingUrl("/login")
+			.defaultSuccessUrl("/index");
 		return http.build();
 	}
 
